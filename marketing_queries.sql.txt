@@ -1,0 +1,28 @@
+CREATE TABLE marketing_customers (
+    ID INT PRIMARY KEY,
+    Age INT,
+    Income FLOAT,
+    Education VARCHAR(50),
+    Marital_Status VARCHAR(50),
+    Country VARCHAR(50),
+    Total_Spend FLOAT,
+    Total_Purchases INT,
+    Response INT
+);
+
+SELECT
+COUNT(*) AS Total_Customers
+FROM marketing_customers;
+
+SELECT
+Response,
+COUNT(*) AS Customers
+FROM marketing_customers
+GROUP BY Response;
+
+SELECT
+Education,
+AVG(Total_Spend) AS Avg_Spend
+FROM marketing_customers
+GROUP BY Education
+ORDER BY Avg_Spend DESC;
